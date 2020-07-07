@@ -5,13 +5,14 @@
     <string name="ex01_title">Ex01</string>
     <string name="ex02_title">Ex02</string>
     <string name="ex03_title">Ex03</string>
-    <string name="title_activity_ex02">Ex02</string>
-    <string name="title_activity_ex01">Ex01</string>
-    <string name="title_activity_ex03">Ex03</string>
-    <string name="y">y = </string>
+    <string name="title_activity_ex02">Lab03Ex02</string>
+    <string name="title_activity_ex01">Lab03Ex01</string>
+    <string name="title_activity_ex03">Lab03Ex03</string>
     <string name="btnClear">Clear Canvas</string>
     <string name="line_thickness">Line thickness</string>
     <string name="line_color">Line Color</string>
     <string name="arrow_keys">Arrow Keys</string>
+    <string name="earthMoon">Earth Moon View</string>
+    <string name="tween">Tweened Animation Example</string>
 
 </resources>

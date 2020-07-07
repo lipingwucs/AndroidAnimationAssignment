@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    This is a simple XML definition for a Animation. Over
+    the course of 5 seconds, scale up and back
+-->
+<set
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:shareInterpolator="false"
+	android:fillAfter="true"
+	android:fillBefore="true"
+	android:repeatMode="restart">
+
+	<translate
+		android:startOffset="0"
+		android:duration="2000"
+		android:fromXDelta="5%p"
+		android:toXDelta="20%p"
+		android:fromYDelta="5%p"
+		android:toYDelta="7%p"/>
+	<alpha
+		android:fromAlpha="0.3"
+		android:toAlpha="0.8"
+		android:startOffset="0"
+		android:duration="2000">
+	</alpha>
+	<scale
+		android:startOffset="0"
+		android:fromXScale="0.3"
+		android:fromYScale="0.3"
+		android:toXScale="0.8"
+		android:toYScale="0.8"
+		android:duration="2000">
+	</scale>
+	<rotate
+		android:startOffset="2000"
+		android:duration="18000"
+		android:fromDegrees="0"
+		android:toDegrees="360"
+		android:pivotX="40%p"
+		android:pivotY="25%p"/>
+	<scale
+		android:startOffset="7000"
+		android:fromXScale="0.8"
+		android:fromYScale="0.8"
+		android:toXScale="1.1"
+		android:toYScale="1.1"
+		android:duration="4000">
+	</scale>
+	<alpha
+		android:startOffset="7000"
+		android:fromAlpha="0.8"
+		android:toAlpha="1.2"
+		android:duration="4000">
+	</alpha>
+	<scale
+		android:startOffset="14000"
+		android:fromXScale="1.1"
+		android:fromYScale="1.1"
+		android:toXScale="0.8"
+		android:toYScale="0.8"
+		android:duration="4000">
+	</scale>
+	<alpha
+		android:startOffset="14000"
+		android:fromAlpha="1.2"
+		android:toAlpha="0.8"
+		android:duration="4000">
+	</alpha>
+	<translate
+		android:startOffset="18000"
+		android:duration="2000"
+		android:fromXDelta="10%p"
+		android:toXDelta="5%p"
+		android:fromYDelta="15%p"
+		android:toYDelta="5%p"/>
+	<alpha
+		android:fromAlpha="1.0"
+		android:toAlpha="0.0"
+		android:startOffset="24000"
+		android:duration="1000">
+	</alpha>
+
+
+
+
+
+</set>

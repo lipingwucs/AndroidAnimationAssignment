@@ -27,22 +27,19 @@ public class MainActivity extends ListActivity {
 
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
-        Intent newActivity;
+        Intent newActivity =null;
         switch(position){
             case 0:
                 newActivity = new Intent(this, Ex01Activity.class);
-                startActivity(newActivity);
                 break;
 
             case 1:
                 newActivity = new Intent(this, Ex02Activity.class);
-                startActivity(newActivity);
                 break;
             case 2:
                 newActivity = new Intent(this, Ex03Activity.class);
-                startActivity(newActivity);
-            break;
             }
+        startActivity(newActivity);
         }
 
 

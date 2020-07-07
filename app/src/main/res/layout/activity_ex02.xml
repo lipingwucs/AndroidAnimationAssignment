@@ -1,17 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout2"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    >
+    android:background="@drawable/earthbackground">
+
     <TextView
-        android:layout_width="fill_parent"
+        android:id="@+id/textView"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textSize="24sp"
-        android:textColor="@color/colorMainTitle"
-        android:text="@string/ex02_title"
-        />
+        android:layout_marginTop="28dp"
+        android:text="@string/tween"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/ButtonAlpha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fade"
+        app:layout_constraintBaseline_toBaselineOf="@+id/ButtonScale"
+        app:layout_constraintEnd_toStartOf="@+id/ButtonScale"
+        app:layout_constraintStart_toStartOf="parent"></Button>
+
+    <Button
+        android:id="@+id/ButtonScale"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="Grow"
+        app:layout_constraintEnd_toStartOf="@+id/ButtonTranslate"
+        app:layout_constraintStart_toEndOf="@+id/ButtonAlpha"
+        app:layout_constraintTop_toBottomOf="@+id/textView"></Button>
+
+    <Button
+        android:id="@+id/ButtonTranslate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Move"
+        app:layout_constraintBaseline_toBaselineOf="@+id/ButtonScale"
+        app:layout_constraintEnd_toStartOf="@+id/ButtonRotate"
+        app:layout_constraintStart_toEndOf="@+id/ButtonScale"></Button>
+
+    <Button
+        android:id="@+id/ButtonRotate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Spin"
+        app:layout_constraintBaseline_toBaselineOf="@+id/ButtonTranslate"
+        app:layout_constraintEnd_toStartOf="@+id/ButtonAll"
+        app:layout_constraintStart_toEndOf="@+id/ButtonTranslate"></Button>
+
+    <Button
+        android:id="@+id/ButtonAll"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="All"
+        app:layout_constraintBaseline_toBaselineOf="@+id/ButtonRotate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ButtonRotate"></Button>
 
 
-</LinearLayout>
+    <ImageView
+        android:id="@+id/ImageViewForMoon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="620dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"></ImageView>
 
+
+</androidx.constraintlayout.widget.ConstraintLayout>
