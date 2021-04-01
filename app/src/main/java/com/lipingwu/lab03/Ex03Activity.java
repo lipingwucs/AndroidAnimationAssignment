@@ -21,7 +21,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class Ex03Activity extends AppCompatActivity {
     Spinner spLineThickness;
     int linethickness = 20;
-    Integer[] lthicknesses ={20, 30, 40, 50,60};
+    Integer[] lthicknesses ={20, 30, 40, 50, 60};
     int drawingColor = Color.RED;
 
     private ImageView reusableImageView;
@@ -139,19 +139,19 @@ public class Ex03Activity extends AppCompatActivity {
 
     //click UP/LEFT/RIGHT/DOWN ARROW TO Draw
     public void upClick(View view){
-        endy=endy - 50;
-        drawLine( canvas);
+        endy=endy - 100;
+        drawLine(canvas);
     }
     public void leftClick(View view){
-        endx=endx - 50;
+        endx=endx - 100;
         drawLine(canvas);
     }
     public void rightClick(View view){
-        endx=endx + 50;
+        endx=endx + 100;
         drawLine( canvas);
     }
     public void downClick(View view){
-        endy=endy + 50;
+        endy=endy + 100;
         drawLine( canvas);
     }
     //end of arrow control

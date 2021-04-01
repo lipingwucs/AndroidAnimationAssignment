@@ -1,108 +1,67 @@
 package com.lipingwu.lab03;
 
 import android.app.Activity;
-import android.graphics.drawable.AnimationDrawable;
-import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TextView;
+
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Ex02Activity extends Activity {
+public class Ex02Activity extends AppCompatActivity {
+
+    ImageView reusableImageView;
+    Animation anim;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ex02);
 
-        // Handle Fade Button
-        final Button fadeButton = (Button) findViewById(R.id.ButtonAlpha);
-        fadeButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                performAnimation(R.anim.transparency);
-            }
-        });
+        //load image view
+        reusableImageView = (ImageView)findViewById(R.id.ImageViewForMoon);
 
-        // Handle Grow Button
-        final Button growButton = (Button) findViewById(R.id.ButtonScale);
-        growButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                performAnimation(R.anim.grow);
-            }
-        });
+        // Load the appropriate animation
+        anim =  AnimationUtils.loadAnimation(this, R.anim.moonmove);
 
-        // Handle Move Button
-        final Button moveButton = (Button) findViewById(R.id.ButtonTranslate);
-        moveButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                performAnimation(R.anim.translate_position);
-            }
-        });
+        // Register a listener, so we can disable and re-enable buttons
+        anim.setAnimationListener(new MyAnimationListener());
 
-        // Handle Spin Button
-        final Button spinButton = (Button) findViewById(R.id.ButtonRotate);
-        spinButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                performAnimation(R.anim.snazzyintro);
-            }
-        });
+    }
+    // Handle Start Button
+    public void startAnimation(View view){
+        performAnimation(R.anim.moonmove);
+    }
 
-        // Handle All Button
-        final Button allButton = (Button) findViewById(R.id.ButtonAll);
-        allButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                performAnimation(R.anim.moonmove);
-            }
-        });
-
+    // Handle Stop Button
+    public void stopAnimation(View view){
+        reusableImageView.clearAnimation();
     }
 
     private void performAnimation(int animationResourceID)
     {
-
-
-        ImageView reusableImageView = (ImageView)findViewById(R.id.ImageViewForMoon);
         reusableImageView.setImageResource(R.drawable.green_rect);
         reusableImageView.setVisibility(View.VISIBLE);
 
-        // Load the appropriate animation
-        Animation an =  AnimationUtils.loadAnimation(this, animationResourceID);
-        // Register a listener, so we can disable and re-enable buttons
-        an.setAnimationListener(new MyAnimationListener());
         // Start the animation
-        reusableImageView.startAnimation(an);
+        reusableImageView.startAnimation(anim);
     }
 
     private void toggleButtons(boolean clickableState)
     {
+        // Handle Start Button
+        final Button startButton = (Button) findViewById(R.id.ButtonStart);
+        startButton.setClickable(clickableState);
 
-        final Button fadeButton = (Button) findViewById(R.id.ButtonAlpha);
-        fadeButton.setClickable(clickableState);
-
-        // Handle Grow Button
-        final Button growButton = (Button) findViewById(R.id.ButtonScale);
-        growButton.setClickable(clickableState);
-
-        // Handle Move Button
-        final Button moveButton = (Button) findViewById(R.id.ButtonTranslate);
-        moveButton.setClickable(clickableState);
-
-        // Handle Spin Button
-        final Button spinButton = (Button) findViewById(R.id.ButtonRotate);
-        spinButton.setClickable(clickableState);
-
-        // Handle Spin Button
-        final Button allButton = (Button) findViewById(R.id.ButtonAll);
-        allButton.setClickable(clickableState);
-
+        // Handle Start Button
+        final Button stopButton = (Button) findViewById(R.id.ButtonStop);
+        stopButton.setClickable(!clickableState);
     }
 
     class MyAnimationListener implements Animation.AnimationListener {
-
         public void onAnimationEnd(Animation animation) {
             // Hide our ImageView
             ImageView reusableImageView = (ImageView)findViewById(R.id.ImageViewForMoon);
@@ -110,7 +69,6 @@ public class Ex02Activity extends Activity {
 
             // Enable all buttons once animation is over
             toggleButtons(true);
-
         }
 
         public void onAnimationRepeat(Animation animation) {
@@ -120,7 +78,6 @@ public class Ex02Activity extends Activity {
         public void onAnimationStart(Animation animation) {
             // Disable all buttons while animation is running
             toggleButtons(false);
-
         }
 
     }

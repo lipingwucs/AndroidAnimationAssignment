@@ -5,64 +5,52 @@
     android:id="@+id/linearLayout2"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@drawable/earthbackground">
+    android:background="@drawable/earthbackground"
+    tools:context=".Ex02Activity">
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:text="@string/tween"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/earthMoon"
+        android:textColor="@color/moon"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/ButtonAlpha"
+    <LinearLayout
+        android:id="@+id/ButtonRow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Fade"
-        app:layout_constraintBaseline_toBaselineOf="@+id/ButtonScale"
-        app:layout_constraintEnd_toStartOf="@+id/ButtonScale"
-        app:layout_constraintStart_toStartOf="parent"></Button>
+        android:layout_marginTop="50dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
 
-    <Button
-        android:id="@+id/ButtonScale"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:text="Grow"
-        app:layout_constraintEnd_toStartOf="@+id/ButtonTranslate"
-        app:layout_constraintStart_toEndOf="@+id/ButtonAlpha"
-        app:layout_constraintTop_toBottomOf="@+id/textView"></Button>
+        <Button
+            android:id="@+id/ButtonStart"
+            android:layout_width="89dp"
+            android:layout_height="wrap_content"
+            android:text="Start"
+            android:onClick="startAnimation"
+            tools:layout_editor_absoluteX="188dp"
+            tools:layout_editor_absoluteY="63dp" />
 
-    <Button
-        android:id="@+id/ButtonTranslate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Move"
-        app:layout_constraintBaseline_toBaselineOf="@+id/ButtonScale"
-        app:layout_constraintEnd_toStartOf="@+id/ButtonRotate"
-        app:layout_constraintStart_toEndOf="@+id/ButtonScale"></Button>
+        <Button
+            android:id="@+id/ButtonStop"
+            android:layout_width="92dp"
+            android:layout_height="wrap_content"
+            android:text="Stop"
+            android:onClick="stopAnimation"
+            tools:layout_editor_absoluteX="285dp"
+            tools:layout_editor_absoluteY="63dp"></Button>
 
-    <Button
-        android:id="@+id/ButtonRotate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Spin"
-        app:layout_constraintBaseline_toBaselineOf="@+id/ButtonTranslate"
-        app:layout_constraintEnd_toStartOf="@+id/ButtonAll"
-        app:layout_constraintStart_toEndOf="@+id/ButtonTranslate"></Button>
-
-    <Button
-        android:id="@+id/ButtonAll"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="All"
-        app:layout_constraintBaseline_toBaselineOf="@+id/ButtonRotate"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/ButtonRotate"></Button>
+    </LinearLayout>
 
 
     <ImageView

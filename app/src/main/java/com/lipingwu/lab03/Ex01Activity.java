@@ -49,7 +49,6 @@ public class Ex01Activity extends AppCompatActivity {
     {
 
         ImageView img = (ImageView)findViewById(R.id.ImageViewFireWorks);
-
         BitmapDrawable frame1 = (BitmapDrawable)getResources().getDrawable(R.drawable.fireworks1);
         BitmapDrawable frame2 = (BitmapDrawable)getResources().getDrawable(R.drawable.fireworks2);
         BitmapDrawable frame3 = (BitmapDrawable)getResources().getDrawable(R.drawable.fireworks3);

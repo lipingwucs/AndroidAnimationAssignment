@@ -10,5 +10,7 @@
     <color name="rbtRedColor">#E91E63</color>
     <color name="rbtGreenColor">#4CAF50</color>
     <color name="moon">#FFEB3B</color>
+    <color name="moon2">#732007</color>
+    <color name="darksky">#C10E0D0D</color>
 
 </resources>

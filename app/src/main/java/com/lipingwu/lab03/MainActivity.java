@@ -1,14 +1,9 @@
 package com.lipingwu.lab03;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.ParcelUuid;
 import android.view.View;
-import android.widget.Adapter;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -32,7 +27,6 @@ public class MainActivity extends ListActivity {
             case 0:
                 newActivity = new Intent(this, Ex01Activity.class);
                 break;
-
             case 1:
                 newActivity = new Intent(this, Ex02Activity.class);
                 break;

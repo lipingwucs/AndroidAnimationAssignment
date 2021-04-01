@@ -75,7 +75,7 @@
 		android:toYDelta="5%p"/>
 	<alpha
 		android:fromAlpha="1.0"
-		android:toAlpha="0.0"
+		android:toAlpha="0.1"
 		android:startOffset="24000"
 		android:duration="1000">
 	</alpha>
